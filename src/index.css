@@ -1,0 +1,596 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ACADS KITCoEK Design System - Glassmorphism & Dark Tech Theme */
+
+@layer base {
+  :root {
+    /* Modern Dark Background */
+    --background: 225 30% 7%;
+    --foreground: 210 40% 98%;
+
+    /* Glass UI Cards */
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
+    --glass: 220 25% 15%;
+    --glass-border: 220 25% 25%;
+
+    /* Popover */
+    --popover: 220 25% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Single Blue Theme */
+    --primary: 220 55% 58%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 220 55% 62%;
+
+    /* Secondary - Complementary Blue (slightly darker) */
+    --secondary: 220 35% 46%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-glow: 220 60% 52%;
+
+    /* Muted elements */
+    --muted: 225 20% 12%;
+    --muted-foreground: 220 15% 70%;
+
+    /* Accent - Soft Blue */
+    --accent: 220 45% 60%;
+    --accent-foreground: 210 40% 98%;
+    --accent-glow: 215 90% 66%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders & Inputs */
+    --border: 223 20% 22%;
+    --input: 223 25% 12%;
+    --ring: 258 90% 66%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(140deg, hsl(225 30% 7%), hsl(230 24% 10%));
+    --gradient-glass: linear-gradient(135deg, hsla(225 20% 18% / 0.3), hsla(225 20% 28% / 0.12));
+    --gradient-primary: linear-gradient(135deg, hsl(220 90% 60%), hsl(220 60% 48%));
+    --gradient-accent: linear-gradient(135deg, hsl(215 90% 62%), hsl(220 90% 60%));
+
+    /* Shadows & Glows */
+    --shadow-glass: 0 8px 28px hsla(225 30% 5% / 0.25);
+    --shadow-glow: 0 0 28px hsla(220 55% 58% / 0.18);
+    --shadow-accent-glow: 0 0 24px hsla(220 45% 60% / 0.18);
+
+    /* Animation transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glass: backdrop-filter 0.3s ease;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass UI Components */
+  .glass-card {
+    @apply backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5
+      border border-white/20 rounded-2xl shadow-2xl text-white/90;
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card:hover {
+    @apply bg-gradient-to-br from-white/10 to-white/10 border-white/25;
+    box-shadow: var(--shadow-glass);
+    transform: translateY(-1px);
+  }
+
+  .glass-button {
+    @apply backdrop-blur-md bg-gradient-to-r from-[hsl(var(--primary)/0.16)] to-[hsl(var(--primary)/0.08)]
+      border border-white/15 rounded-xl px-6 py-3 font-medium
+      text-white/90
+      hover:from-[hsl(var(--primary)/0.20)] hover:to-[hsl(var(--primary)/0.10)]
+      hover:border-white/20 transition-all duration-300;
+  }
+
+  .glass-input {
+    @apply backdrop-blur-md bg-white/5 border border-white/20 rounded-xl
+      px-4 py-3 text-foreground placeholder:text-muted-foreground
+      focus:border-primary/50 focus:ring-2 focus:ring-primary/20
+      transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-b from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  /* Aura and background frame for splash */
+  .gradient-frame {
+    background: linear-gradient(135deg, hsl(220 55% 58% / 0.92), hsl(220 35% 46% / 0.85));
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    z-index: 10; /* keep behind text */
+  }
+
+  .splash-aura {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, hsl(220 55% 58% / 0.92), hsl(220 35% 46% / 0.85));
+    filter: blur(48px);
+    opacity: 0.85;
+    z-index: 0; /* behind text */
+    pointer-events: none;
+  }
+
+  /* Splash fade and dissolve animations */
+  .splash-fade {
+    animation: splashOut 6.25s ease forwards;
+  }
+
+  .splash-dissolve {
+    animation: blurOutSmooth 700ms ease-out forwards;
+  }
+
+  .word-pop {
+    color: white;
+  }
+
+  .word-expand {
+    will-change: transform, opacity;
+    animation: wordExpand 700ms cubic-bezier(0.32, 1, 0.52, 1) forwards;
+  }
+  
+
+  .final-word {
+    color: hsl(220 90% 98%);
+    filter: drop-shadow(0 0 18px hsl(220 55% 58% / 0.32));
+    will-change: transform, opacity;
+  }
+
+  .final-wrap {
+    position: relative;
+    z-index: 50;
+    isolation: isolate;
+  }
+
+  /* Display title styling */
+  .display-title {
+    @apply font-extrabold tracking-tight leading-none;
+    letter-spacing: -0.02em;
+  }
+
+  /* Glow effect */
+  .glow-effect {
+    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.5));
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  /* Avatar shapes */
+  .avatar-hex {
+    width: 7rem;
+    height: 7rem;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+  }
+
+  .avatar-hex--sm {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .avatar-hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+  }
+
+  .avatar-hex--hover:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), 0 0 30px hsla(var(--primary) / 0.18);
+  }
+
+  /* Marquee/Ticker strip */
+  .ticker {
+    @apply w-screen relative overflow-hidden select-none;
+  }
+
+  .ticker__track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: ticker-scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker__track {
+      animation: none;
+    }
+  }
+
+  .ticker__item {
+    @apply uppercase tracking-widest text-xs md:text-sm text-white/70;
+    letter-spacing: 0.18em;
+  }
+
+  .ticker__dot {
+    @apply mx-2 inline-block w-1 h-1 rounded-full bg-white/40 align-middle;
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.8), 0 0 40px hsl(var(--secondary) / 0.3);
+  }
+}
+
+@keyframes splashOut {
+  0%, 85% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes blurOutSmooth {
+  0% {
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    backdrop-filter: blur(0px);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes wordIn {
+  0% { transform: translateY(16px); opacity: 0; }
+  60% { transform: translateY(0); opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes wordFadeIn {
+  0% { opacity: 0; transform: translateY(32px); }
+  60% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes wordExpandStrong {
+  0% { opacity: 1; transform: scale(1) translateY(0); letter-spacing: 0; }
+  50% { opacity: 1; transform: scale(2.8) translateY(-12px); letter-spacing: 0.35em; }
+  75% { opacity: 0.8; transform: scale(3.6) translateY(-18px); letter-spacing: 0.45em; }
+  100% { opacity: 0; transform: scale(4.8) translateY(-24px); letter-spacing: 0.6em; }
+}
+
+@keyframes wordExpand {
+  0% { transform: scale(1); opacity: 1; }
+  40% { transform: scale(1.18); opacity: 1; }
+  70% { transform: scale(1.33); opacity: 0.98; }
+  100% { transform: scale(1.57); opacity: 0; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Additional subtle motion for hero */
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-slow-spin {
+  animation: slowSpin 36s linear infinite;
+}
+
+@keyframes fadeInScale {
+  0% { opacity: 0; transform: translateY(12px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 800ms ease-out both;
+}
+
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-right {
+  animation: slideInRight 700ms ease-out both;
+}
+
+@keyframes slideInUpSoft {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in-up-soft {
+  animation: slideInUpSoft 750ms ease-out both;
+}
+
+/* Panel slide from bottom (stronger) */
+@keyframes slideInUpPanel {
+  0% { opacity: 0; transform: translateY(60px); }
+  60% { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up-panel {
+  animation: slideInUpPanel 820ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes wordReveal {
+  0% { opacity: 0; transform: translateY(18px) scale(0.98); letter-spacing: 0.02em; }
+  60% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 1; letter-spacing: -0.01em; }
+}
+.hero-word {
+  animation: wordReveal 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Logo reveal (scale + fade with slight delay) - original acads style */
+@keyframes logoReveal {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.3); 
+  }
+  50% { 
+    opacity: 0.6; 
+    transform: scale(1.1); 
+  }
+  100% { 
+    opacity: 0.4; 
+    transform: scale(1); 
+  }
+}
+.animate-logo-reveal {
+  animation: logoReveal 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s both;
+}
+
+/* Optimized animations for smooth performance */
+@keyframes wordInLeft {
+  0% { 
+    opacity: 0; 
+    transform: translate3d(-34vw, 0, 0) scale(0.8); 
+  }
+  60% {
+    opacity: 0.9;
+    transform: translate3d(-5vw, 0, 0) scale(0.98);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translate3d(0, 0, 0) scale(1); 
+  }
+}
+@keyframes wordInRight {
+  0% { 
+    opacity: 0; 
+    transform: translate3d(22vw, 0, 0) scale(0.8); 
+  }
+  60% {
+    opacity: 0.9;
+    transform: translate3d(5vw, 0, 0) scale(0.98);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translate3d(0, 0, 0) scale(1); 
+  }
+}
+@keyframes estimateIn {
+  0% { 
+    opacity: 0; 
+    transform: translate3d(22vw, 0, 0) scale(0.8); 
+  }
+  60% {
+    opacity: 0.9;
+    transform: translate3d(5vw, 0, 0) scale(0.98);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translate3d(0, 0, 0) scale(1); 
+  }
+}
+@keyframes cardSlideUp {
+  0% { 
+    opacity: 0; 
+    transform: translate3d(0, 100%, 0) scale(0.95); 
+  }
+  60% {
+    opacity: 0.9;
+    transform: translate3d(0, 10px, 0) scale(0.98);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translate3d(0, 0, 0) scale(1); 
+  }
+}
+
+.animate-word-left { 
+  animation: wordInLeft 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; 
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.animate-word-right { 
+  animation: wordInRight 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both; 
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.animate-estimate { 
+  animation: estimateIn 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both; 
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.animate-card-up { 
+  animation: cardSlideUp 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both; 
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Enhanced animations for better visual appeal */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--secondary) / 0.3);
+  }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Preloader transition styles */
+body.preloader-complete {
+  overflow: visible;
+}
+
+/* Smooth transition for hero section elements */
+.hero-transition {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out both;
+}
