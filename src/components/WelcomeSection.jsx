@@ -1,6 +1,6 @@
 import { Users, Code, Brain, Network } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import teamPhoto from '@/assets/IMG_3357 (1).jpg';
+import teamPhoto from '@/assets/IMG_3357-1.jpg';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 var WelcomeSection = () => {
   var features = [{
