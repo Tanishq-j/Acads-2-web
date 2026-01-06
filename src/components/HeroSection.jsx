@@ -7,21 +7,12 @@ const HeroSection = () => {
   const [animationsReady, setAnimationsReady] = useState(false);
 
   useEffect(() => {
-    // Listen for preloader completion
-    const handlePreloaderComplete = () => {
-      // Start immediately as overlay is removed
+    // Start animations shortly after mount since preloader is removed
+    const timer = setTimeout(() => {
       setAnimationsReady(true);
-    };
+    }, 100);
 
-    // Check if preloader is already complete
-    if (document.body.classList.contains('preloader-complete')) {
-      setAnimationsReady(true);
-    }
-    window.addEventListener('preloaderComplete', handlePreloaderComplete);
-
-    return () => {
-      window.removeEventListener('preloaderComplete', handlePreloaderComplete);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -30,15 +21,12 @@ const HeroSection = () => {
     >
       {/* Background Grid & Elements */}
       <div className="pointer-events-none absolute inset-0 select-none">
-        <div className="absolute left-0 right-0 top-1/2 h-px bg-slate-200/50" />
-        <div className="absolute top-0 bottom-0 left-1/2 w-px bg-slate-200/50" />
-
-        {/* Animated grid dots (darker for light theme) */}
-        <div className="absolute inset-0 opacity-40">
+        {/* Animated grid dots (Darker as requested) */}
+        <div className="absolute inset-0 opacity-60">
           {Array.from({ length: 20 }).map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-primary/40 rounded-full animate-float"
+              className="absolute w-1 h-1 bg-primary/80 rounded-full animate-float"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -51,32 +39,18 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 w-full max-w-5xl px-4 flex flex-col items-center gap-8 md:gap-12">
+      <div className="relative z-10 w-full max-w-7xl px-4 flex flex-col items-center gap-8 md:gap-12">
 
-        {/* 1. Stacked Word Animation (Top or Behind) */}
-        {/* Moving this to be part of the flow or subtle background text as per "regular" request. 
-            However, keeping original "Integrity/And/Excellence" words as floating elements 
-            can look good if positioned correctly. Let's position them subtly around the center 
-            or keep them as a quiet backdrop. For a clean center layout, let's place them 
-            above the logo or interwoven. 
-            
-            Actually, let's keep them as a distinct intro or surrounding element. 
-            User wants "Regular" speed. Let's place them horizontally above the logo? 
-            Or keep vertical left but ensuring it doesn't overlap centered content.
-            
-            Let's simplify: Place "Integrity And Excellence" as a subtitle or header tag?
-            User asked to "Redesign".
-            Let's put them floating on the layout edges to frame the center content.
-        */}
-        <div className="hidden lg:block absolute left-[5%] top-1/2 -translate-y-1/2 text-left pointer-events-none opacity-20">
-          <h2 className="text-6xl font-bold text-slate-300">Integrity</h2>
-          <h2 className="text-6xl font-bold text-slate-300 mt-2">Excellence</h2>
+        {/* 1. Tagline: Integrity And Excellence (Slide in from Left) */}
+        <div className={`hidden lg:block absolute top-[30%] -translate-y-1/2 text-left pointer-events-none select-none transition-all duration-[3000ms] ease-out ${animationsReady ? 'left-10 opacity-100' : '-left-20 opacity-0'}`}>
+          <h2 className="text-7xl font-bold text-slate-700/80">Integrity</h2>
+          <h2 className="text-5xl font-bold text-primary/80 ml-1 my-1">AND</h2>
+          <h2 className="text-7xl font-bold text-slate-700/80">Excellence</h2>
         </div>
 
-
-        {/* 2. Central Logo Motif */}
-        <div className="relative w-[50vmin] max-w-[400px] aspect-square flex items-center justify-center">
-          {/* Concentric Circles (Darker borders for visibility) */}
+        {/* 2. Central Logo Motif (Pushed right with transform) */}
+        <div className={`relative w-[50vmin] max-w-[400px] aspect-square flex items-center justify-center mt-12 lg:translate-x-80 transition-all duration-[3000ms] ease-out ${animationsReady ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+          {/* Concentric Circles */}
           <div className="absolute inset-0 rounded-full border border-slate-200 bg-slate-50/50" />
           <div className="absolute inset-8 rounded-full border border-slate-200" />
           <div className="absolute inset-16 rounded-full border border-slate-200" />
@@ -84,14 +58,14 @@ const HeroSection = () => {
           <img
             src={clubLogo}
             alt="ACADS Logo"
-            className={`relative w-48 md:w-64 object-contain z-20 transition-all duration-[2000ms] ease-out ${animationsReady ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}
+            className="relative w-48 md:w-64 object-contain z-20"
             style={{
               filter: 'drop-shadow(0 10px 20px rgba(8, 176, 215, 0.2))'
             }}
           />
         </div>
 
-        {/* 3. Text Content (Centered Below Logo) */}
+        {/* 3. Text Content (Centered - No Padding) */}
         <div className={`flex flex-col items-center gap-6 max-w-3xl transition-all duration-[2000ms] delay-300 ease-out ${animationsReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
             Association of CSE <br className="hidden md:block" />
@@ -127,4 +101,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
