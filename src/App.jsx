@@ -19,67 +19,42 @@ import NotFound from "./pages/NotFound";
 import BeyondResume from "./pages/BeyondResume";
 import Legacy from "./pages/Legacy";
 import Footer from "./components/Footer";
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-var queryClient = new QueryClient();
-var App = () => /*#__PURE__*/_jsx(QueryClientProvider, {
-  client: queryClient,
-  children: /*#__PURE__*/_jsxs(TooltipProvider, {
-    children: [/*#__PURE__*/_jsx(Toaster, {}), /*#__PURE__*/_jsx(Sonner, {}), /*#__PURE__*/_jsx(BrowserRouter, {
-      children: /*#__PURE__*/_jsxs("div", {
-        className: "min-h-screen",
-        children: [/*#__PURE__*/_jsx(Header, {}), /*#__PURE__*/_jsxs(Routes, {
-          children: [/*#__PURE__*/_jsx(Route, {
-            path: "/",
-            element: /*#__PURE__*/_jsx(Index, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "/about",
-            element: /*#__PURE__*/_jsx(About, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "/mission",
-            element: /*#__PURE__*/_jsx(About, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "/why-join",
-            element: /*#__PURE__*/_jsx(About, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "/events",
-            element: /*#__PURE__*/_jsx(Events, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "/team",
-            element: /*#__PURE__*/_jsx(Team, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "/gallery",
-            element: /*#__PURE__*/_jsx(Gallery, {})
-          }), /*#__PURE__*/_jsx(Route, {
-          path: "/workshops",
-          element: /*#__PURE__*/_jsx(Workshops, {})
-        }), /*#__PURE__*/_jsx(Route, {
-          path: "/news",
-          element: /*#__PURE__*/_jsx(News, {})
-        }), /*#__PURE__*/_jsx(Route, {
-          path: "/join",
-          element: /*#__PURE__*/_jsx(Join, {})
-        }), /*#__PURE__*/_jsx(Route, {
-            path: "/beyond-resume",
-            element: /*#__PURE__*/_jsx(BeyondResume, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "/sponsors",
-            element: /*#__PURE__*/_jsx(SponsorsPage, {})
-          }), /*#__PURE__*/_jsx(Route, {
-          path: "/faq",
-          element: /*#__PURE__*/_jsx(FAQ, {})
-        }), /*#__PURE__*/_jsx(Route, {
-            path: "/contact",
-            element: /*#__PURE__*/_jsx(Contact, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "/legacy",
-            element: /*#__PURE__*/_jsx(Legacy, {})
-          }), /*#__PURE__*/_jsx(Route, {
-            path: "*",
-            element: /*#__PURE__*/_jsx(NotFound, {})
-          })]
-        }), /*#__PURE__*/_jsx(Footer, {})]
-      })
-    })]
-  })
-});
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/mission" element={<About />} />
+              <Route path="/why-join" element={<About />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/workshops" element={<Workshops />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/join" element={<Join />} />
+              <Route path="/beyond-resume" element={<BeyondResume />} />
+              <Route path="/sponsors" element={<SponsorsPage />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/legacy" element={<Legacy />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
 export default App;

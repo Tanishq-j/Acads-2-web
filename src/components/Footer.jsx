@@ -57,15 +57,15 @@ const Footer = () => {
               </p>
               <div className="space-y-3 mb-6">
                 <div className="flex items-center gap-3 text-muted-foreground">
-                  <MapPin className="w-4 h-4 text-white/70" />
+                  <MapPin className="w-4 h-4 text-primary" />
                   <span className="text-sm">KIT's College of Engineering, Kolhapur</span>
                 </div>
                 <div className="flex items-center gap-3 text-muted-foreground">
-                  <Mail className="w-4 h-4 text-white/70" />
+                  <Mail className="w-4 h-4 text-primary" />
                   <span className="text-sm">contact@acadskitcoek.in</span>
                 </div>
                 <div className="flex items-center gap-3 text-muted-foreground">
-                  <Phone className="w-4 h-4 text-white/70" />
+                  <Phone className="w-4 h-4 text-primary" />
                   <span className="text-sm">+91 XXX XXX XXXX</span>
                 </div>
               </div>
@@ -74,12 +74,12 @@ const Footer = () => {
                   <a
                     key={label}
                     href={href}
-                    className="glass-card p-3 group"
+                    className="glass-card p-3 group hover:border-primary/50"
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Icon className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" />
+                    <Icon className="w-5 h-5 text-slate-600 group-hover:text-primary transition-colors" />
                   </a>
                 ))}
               </div>
@@ -129,7 +129,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright with less spacing below */}
-          <div className="pt-6 border-t border-white/10">
+          <div className="pt-6 border-t border-border">
             <div className="flex items-center justify-center h-12 text-muted-foreground text-sm">
               <span>&copy; {currentYear} ACADS KITCoEK.</span>
             </div>

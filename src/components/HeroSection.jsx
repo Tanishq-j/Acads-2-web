@@ -26,19 +26,19 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-background via-background/95 to-background"
+      className="relative min-h-screen overflow-hidden bg-background flex flex-col items-center justify-center text-center pt-20"
     >
-      {/* Cross grid like original with enhanced animations */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 right-0 top-1/2 h-px bg-white/15" />
-        <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white/15" />
+      {/* Background Grid & Elements */}
+      <div className="pointer-events-none absolute inset-0 select-none">
+        <div className="absolute left-0 right-0 top-1/2 h-px bg-slate-200/50" />
+        <div className="absolute top-0 bottom-0 left-1/2 w-px bg-slate-200/50" />
 
-        {/* Animated grid dots */}
-        <div className="absolute inset-0 opacity-20">
+        {/* Animated grid dots (darker for light theme) */}
+        <div className="absolute inset-0 opacity-40">
           {Array.from({ length: 20 }).map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-white/30 rounded-full animate-float"
+              className="absolute w-1 h-1 bg-primary/40 rounded-full animate-float"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -50,110 +50,81 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Vertical words stack: Integrity, And, Excellence */}
-      <div
-        className="absolute left-[6vw] top-1/2 -translate-y-1/2 select-none z-30"
-        style={{ visibility: animationsReady ? 'visible' : 'hidden' }}
-      >
-        <div className={`transition-all duration-[1500ms] ease-out ${animationsReady ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3'}`}>
-          <h2 className="font-extrabold leading-none tracking-tight text-foreground/90 hover:text-primary transition-colors duration-300" style={{ fontSize: 'clamp(15px, 6vw, 80px)' }}>
-            Integrity
-          </h2>
+      {/* Main Content Container */}
+      <div className="relative z-10 w-full max-w-5xl px-4 flex flex-col items-center gap-8 md:gap-12">
+
+        {/* 1. Stacked Word Animation (Top or Behind) */}
+        {/* Moving this to be part of the flow or subtle background text as per "regular" request. 
+            However, keeping original "Integrity/And/Excellence" words as floating elements 
+            can look good if positioned correctly. Let's position them subtly around the center 
+            or keep them as a quiet backdrop. For a clean center layout, let's place them 
+            above the logo or interwoven. 
+            
+            Actually, let's keep them as a distinct intro or surrounding element. 
+            User wants "Regular" speed. Let's place them horizontally above the logo? 
+            Or keep vertical left but ensuring it doesn't overlap centered content.
+            
+            Let's simplify: Place "Integrity And Excellence" as a subtitle or header tag?
+            User asked to "Redesign".
+            Let's put them floating on the layout edges to frame the center content.
+        */}
+        <div className="hidden lg:block absolute left-[5%] top-1/2 -translate-y-1/2 text-left pointer-events-none opacity-20">
+          <h2 className="text-6xl font-bold text-slate-300">Integrity</h2>
+          <h2 className="text-6xl font-bold text-slate-300 mt-2">Excellence</h2>
         </div>
-        <div className={`mt-3 transition-all duration-[1500ms] ease-out ${animationsReady ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3'}`}>
-          <h2 className="font-extrabold leading-none tracking-tight text-foreground/90 hover:text-primary transition-colors duration-300" style={{ fontSize: 'clamp(15px, 6vw, 80px)' }}>
-            And
-          </h2>
-        </div>
-        <div className={`mt-3 transition-all duration-[1500ms] ease-out ${animationsReady ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3'}`}>
-          <h2 className="font-extrabold leading-none tracking-tight text-foreground/90 hover:text-primary transition-colors duration-300" style={{ fontSize: 'clamp(15px, 6vw, 80px)' }}>
-            Excellence
-          </h2>
-        </div>
-      </div>
-
-      {/* Center motif with enhanced animations */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-[60vmin] max-w-[560px] aspect-square">
-          <div className="absolute inset-0 rounded-full border border-white/12 bg-white/[0.03] z-10" />
-          <div className="absolute inset-6 rounded-full border border-white/10 z-10" />
-          <div className="absolute inset-12 rounded-full border border-white/10 z-10" />
-          <div className="absolute inset-20 rounded-full border border-white/10 z-10" />
-          <div className="absolute inset-28 rounded-full border border-white/10 z-10" />
 
 
-          {/* Removed mid floating word (And) since stacked on left */}
+        {/* 2. Central Logo Motif */}
+        <div className="relative w-[50vmin] max-w-[400px] aspect-square flex items-center justify-center">
+          {/* Concentric Circles (Darker borders for visibility) */}
+          <div className="absolute inset-0 rounded-full border border-slate-200 bg-slate-50/50" />
+          <div className="absolute inset-8 rounded-full border border-slate-200" />
+          <div className="absolute inset-16 rounded-full border border-slate-200" />
 
-          {/* Logo with enhanced reveal animation - start slightly earlier */}
           <img
             src={clubLogo}
             alt="ACADS Logo"
-            loading="eager"
-            decoding="sync"
-            fetchpriority="high"
-            className={`absolute inset-0 m-auto w-44 md:w-72 object-contain z-20 pointer-events-none transition-all duration-[2000ms] ease-out ${animationsReady ? 'opacity-50 scale-100' : 'opacity-0 scale-75'}`}
+            className={`relative w-48 md:w-64 object-contain z-20 transition-all duration-[2000ms] ease-out ${animationsReady ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}
             style={{
-              filter: 'drop-shadow(0 0 22px hsla(var(--primary),0.3))',
-              visibility: animationsReady ? 'visible' : 'hidden'
+              filter: 'drop-shadow(0 10px 20px rgba(8, 176, 215, 0.2))'
             }}
           />
         </div>
-      </div>
 
-      {/* Right-bottom information panel with slide-up animation */}
-      <div
-        className={`absolute z-40 border-t border-l border-white/12 bg-[hsl(var(--card))]/92 backdrop-blur-md shadow-[0_-10px_40px_rgba(0,0,0,0.35)] transition-transform transition-opacity duration-[2000ms] ease-out ${animationsReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-        style={{
-          left: 'calc(50vw - 8px)',
-          right: 0,
-          top: '50vh',
-          height: '50vh',
-          visibility: animationsReady ? 'visible' : 'hidden'
-        }}
-      >
-        <div className="relative h-full px-6 py-7 md:px-10 md:py-10">
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-foreground hover:text-primary transition-colors duration-500">
-            Association of CSE (AIML & DS) Students.
+        {/* 3. Text Content (Centered Below Logo) */}
+        <div className={`flex flex-col items-center gap-6 max-w-3xl transition-all duration-[2000ms] delay-300 ease-out ${animationsReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Association of CSE <br className="hidden md:block" />
+            <span className="gradient-text">(AIML & DS)</span> Students
           </h1>
-          <p className="mt-3 text-lg md:text-xl text-muted-foreground max-w-3xl hover:text-foreground transition-colors duration-500">
 
-            Empowering students with real-world AI and DS experience through hackathons, competitions, and collaborations inspiring innovation and excellence.
+          <p className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+            Empowering students with real-world AI and DS experience through hackathons, competitions, and collaborations.
           </p>
-          <ul className="mt-6 space-y-3 text-foreground/95">
-            <li className="flex items-start gap-3 group hover:text-primary transition-colors duration-300">
-              <span className="mt-2 h-2 w-2 rounded-sm bg-foreground/90 group-hover:bg-primary transition-colors duration-300" />
-              Build real-world AI projects
-            </li>
-            <li className="flex items-start gap-3 group hover:text-primary transition-colors duration-300">
-              <span className="mt-2 h-2 w-2 rounded-sm bg-foreground/90 group-hover:bg-primary transition-colors duration-300" />
-              Learn industry-relevant skills
-            </li>
-            <li className="flex items-start gap-3 group hover:text-primary transition-colors duration-300">
-              <span className="mt-2 h-2 w-2 rounded-sm bg-foreground/90 group-hover:bg-primary transition-colors duration-300" />
-              Collaborate, innovate, and grow
-            </li>
-          </ul>
-          {/* Buttons with enhanced hover effects */}
-          <div className="absolute right-6 md:right-10 bottom-6 md:bottom-8 flex gap-4">
+
+          {/* Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
             <Link
               to="/gallery"
-              className="glass-button inline-flex items-center gap-2 px-5 py-3 hover:scale-105 hover:shadow-lg transition-all duration-300 group"
+              className="glass-button flex items-center gap-2 group"
             >
-              <Play className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-              Watch a video
+              <Play className="h-5 w-5 fill-current" />
+              Watch Video
             </Link>
             <Link
               to="/events"
-              className="glass-button inline-flex items-center gap-2 px-5 py-3 hover:scale-105 hover:shadow-lg transition-all duration-300 group"
+              className="px-6 py-3 rounded-xl border-2 border-slate-200 font-semibold text-slate-700 hover:border-primary hover:text-primary transition-colors duration-300 flex items-center gap-2"
             >
-              <Calendar className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-              See events
+              <Calendar className="h-5 w-5" />
+              Upcoming Events
             </Link>
           </div>
         </div>
+
       </div>
     </section>
   );
 };
 
 export default HeroSection;
+

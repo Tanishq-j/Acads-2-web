@@ -122,28 +122,31 @@
 @layer components {
 
   /* Glass UI Components */
+  /* Glass UI Components - Adapted for Light Theme */
   .glass-card {
-    @apply backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl shadow-2xl text-white/90;
+    @apply bg-white/80 border border-slate-200 rounded-2xl shadow-lg text-slate-800 backdrop-blur-md;
     box-shadow: var(--shadow-glass);
     transition: var(--transition-smooth);
   }
 
   .glass-card:hover {
-    @apply bg-gradient-to-br from-white/10 to-white/10 border-white/25;
-    box-shadow: var(--shadow-glass);
-    transform: translateY(-1px);
+    @apply bg-white/95 border-primary/20;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
   }
 
+  /* Solid Blue Button for High Contrast */
   .glass-button {
-    @apply backdrop-blur-md bg-gradient-to-r from-[hsl(var(--primary)/0.16)] to-[hsl(var(--primary)/0.08)] border border-white/15 rounded-xl px-6 py-3 font-medium text-white/90 hover:from-[hsl(var(--primary)/0.20)] hover:to-[hsl(var(--primary)/0.10)] hover:border-white/20 transition-all duration-300;
+    @apply bg-primary text-primary-foreground border border-primary/20 rounded-xl px-6 py-3 font-semibold hover:bg-primary/90 hover:scale-105 hover:shadow-lg transition-all duration-300;
+    box-shadow: 0 4px 14px 0 rgba(8, 176, 215, 0.39);
   }
 
   .glass-input {
-    @apply backdrop-blur-md bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-300;
+    @apply bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-800 placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-b from-primary to-primary/70 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-extrabold;
   }
 
   /* Aura and background frame for splash */

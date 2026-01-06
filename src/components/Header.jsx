@@ -107,15 +107,15 @@ const Header = () => {
                       onMouseEnter={openAbout}
                       onMouseLeave={scheduleCloseAbout}
                     >
-                      <button className="group relative flex items-center space-x-1 text-foreground hover:text-white/90 transition-colors duration-300 ease-in-out">
+                      <button className="group relative flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-300 ease-in-out">
                         <span>{item.title}</span>
                         <ChevronDown className="w-4 h-4" />
-                        <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-0 bg-white/60 transition-all duration-300 ease-in-out group-hover:w-full" />
+                        <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-0 bg-primary/60 transition-all duration-300 ease-in-out group-hover:w-full" />
                       </button>
 
                       {isAboutOpen && (
                         <div
-                          className="absolute top-full left-0 mt-1 w-48 glass-card border border-white/20 rounded-lg py-2 z-50"
+                          className="absolute top-full left-0 mt-1 w-48 glass-card border border-slate-200/50 rounded-lg py-2 z-50"
                           onMouseEnter={openAbout}
                           onMouseLeave={scheduleCloseAbout}
                         >
@@ -123,7 +123,7 @@ const Header = () => {
                             <Link
                               key={subItem.path}
                               to={subItem.path}
-                              className={`block px-4 py-2 text-sm transition-colors ease-in-out hover:bg-white/10 ${isActive(subItem.path) ? 'text-primary bg-white/5' : 'text-foreground'}`}
+                              className={`block px-4 py-2 text-sm transition-colors ease-in-out hover:bg-slate-100 ${isActive(subItem.path) ? 'text-primary bg-slate-50' : 'text-foreground'}`}
                             >
                               {subItem.title}
                             </Link>
@@ -134,10 +134,10 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className={`group relative text-foreground hover:text-white/90 transition-colors duration-300 ease-in-out ${isActive(item.path) ? 'text-primary' : ''}`}
+                      className={`group relative text-foreground hover:text-primary transition-colors duration-300 ease-in-out ${isActive(item.path) ? 'text-primary' : ''}`}
                     >
                       {item.title}
-                      <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-0 bg-white/60 transition-all duration-300 ease-in-out group-hover:w-full" />
+                      <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-0 bg-primary/60 transition-all duration-300 ease-in-out group-hover:w-full" />
                     </Link>
                   )}
                 </div>
@@ -147,7 +147,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-foreground hover:text-white/90 transition-colors duration-300 ease-in-out"
+              className="lg:hidden text-foreground hover:text-primary transition-colors duration-300 ease-in-out"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -156,7 +156,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-white/10 transition-all duration-500 ease-in-out">
+          <div className="lg:hidden py-4 border-t border-slate-200 transition-all duration-500 ease-in-out glass-card mt-2">
             <nav className="space-y-2">
               {navItems.map((item) => (
                 <div key={item.title}>
@@ -164,7 +164,7 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => setIsAboutOpen(!isAboutOpen)}
-                        className="flex items-center justify-between w-full px-4 py-2 text-foreground hover:bg-white/10 rounded-lg transition-colors duration-300 ease-in-out"
+                        className="flex items-center justify-between w-full px-4 py-2 text-foreground hover:bg-slate-100 rounded-lg transition-colors duration-300 ease-in-out"
                       >
                         <span>{item.title}</span>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isAboutOpen ? 'rotate-180' : ''}`} />
