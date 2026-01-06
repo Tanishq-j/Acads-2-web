@@ -68,7 +68,7 @@ const Team = () => {
       linkedin: '#'
     }
   }];
-  
+
   const domains = [{
     title: 'Technical',
     icon: Code,
@@ -133,11 +133,11 @@ const Team = () => {
       name: 'Shravani Jadhav',
       image: 'https://res.cloudinary.com/dafvn9a2m/image/upload/w_350,h_350/v1759771404/shravani_wihtout_bg_t0gd38.png'
     },
-  {
+    {
       name: 'Gaurav Kudtarkar',
       image: 'https://res.cloudinary.com/dafvn9a2m/image/upload/w_350,h_350/v1759771504/gaurav_without_bg_ly1qv2.png'
     },
-  {
+    {
       name: 'Madhushri Koshti',
       image: 'https://res.cloudinary.com/dafvn9a2m/image/upload/w_350,h_350/v1759771404/madhurshree_without_bg_ngtq8l.png'
     },]
@@ -177,7 +177,7 @@ const Team = () => {
     }, {
       name: 'Sanika Shinde',
       image: 'https://res.cloudinary.com/dafvn9a2m/image/upload/w_350,h_350/v1759771868/1000054274_o7qt9w.png'
-    }, ]
+    },]
   }, {
     title: 'Film & Media',
     icon: Award,
@@ -223,7 +223,7 @@ const Team = () => {
     }, {
       name: 'Shahu Mangalekar',
       image: 'https://res.cloudinary.com/dafvn9a2m/image/upload/w_350,h_350/v1759777068/2-removebg-preview_zk55cf.png'
-    }, ]
+    },]
   }, {
     title: 'Logistics',
     icon: Users,
@@ -273,21 +273,21 @@ const Team = () => {
             <h2 className="text-4xl font-bold text-center mb-12">
               Leadership Team
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
               {leadership.map((member, index) => (
                 <div
                   key={index}
-                  className="group glass-card p-6 rounded-2xl overflow-visible hover:scale-[1.02] transition-transform"
+                  className="group glass-card p-6 rounded-2xl overflow-visible hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-700 ease-in-out"
                 >
                   <div className="text-center overflow-visible">
-                    <div className="relative mx-auto mb-4 w-32 h-32 rounded-full overflow-visible z-10">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/50 via-cyan-400/50 to-blue-600/50 rounded-full blur-sm"></div>
-                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/30 via-sky-300/30 to-cyan-500/30 rounded-full"></div>
-                      <div className="relative w-full h-full rounded-full ring-2 ring-blue-400/40 shadow-xl shadow-blue-500/25 overflow-visible flex items-end justify-center">
+                    <div className="relative mx-auto mb-6 w-48 h-48 rounded-full overflow-visible z-10">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-cyan-400/30 to-blue-600/30 rounded-full blur-md group-hover:blur-xl transition-all duration-700"></div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/20 via-sky-300/20 to-cyan-500/20 rounded-full"></div>
+                      <div className="relative w-full h-full rounded-full ring-2 ring-blue-400/30 shadow-xl shadow-blue-500/20 overflow-visible flex items-end justify-center">
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover object-bottom rounded-full transition-all duration-500 ease-out relative z-[100] group-hover:scale-[1.15] group-hover:drop-shadow-2xl"
+                          className="w-full h-full object-cover object-bottom rounded-full transition-all duration-700 ease-in-out relative z-[100] group-hover:scale-110 group-hover:-rotate-2 group-hover:drop-shadow-2xl"
                         />
                       </div>
                     </div>
@@ -332,72 +332,76 @@ const Team = () => {
             <h2 className="text-4xl font-bold text-center mb-12">Domains</h2>
             <div className="grid md:grid-cols-1 gap-12">
               {domains.map((dom, i) => (
-                <div key={i} className="glass-card p-10 rounded-2xl overflow-visible">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                <div key={i} className="glass-card p-10 rounded-2xl overflow-visible hover:shadow-2xl hover:shadow-primary/10 transition-all duration-700">
+                  <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg">
                       <dom.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold">{dom.title}</h3>
+                    <h3 className="text-2xl font-bold">{dom.title}</h3>
                   </div>
-                  <div className="space-y-8">
+                  <div className="space-y-12">
+                    {/* Domain Head */}
                     {dom.head && (
-                      <div className="group text-center overflow-visible z-10">
-                        <div className="relative mx-auto mb-3 w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-visible">
-                          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-cyan-400/40 to-indigo-500/40 rounded-2xl blur-md"></div>
-                          <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/25 via-blue-300/25 to-cyan-500/25 rounded-2xl"></div>
-                          <div className="relative w-full h-full rounded-2xl ring-2 ring-blue-400/40 shadow-2xl shadow-blue-500/30 overflow-visible flex items-end justify-center">
-                            <img
-                              src={dom.head.image}
-                              alt={dom.head.name}
-                              className="w-full h-full object-cover object-bottom rounded-2xl transition-all duration-500 ease-out relative z-[100] group-hover:scale-[1.15] group-hover:drop-shadow-2xl"
-                            />
+                      <div className="flex justify-center">
+                        <div className="group text-center overflow-visible z-10 w-64">
+                          <div className="relative mx-auto mb-4 w-48 h-48 rounded-2xl overflow-visible hover:-translate-y-2 transition-transform duration-700 ease-in-out">
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-cyan-400/30 to-indigo-500/30 rounded-2xl blur-md group-hover:blur-xl transition-all duration-700"></div>
+                            <div className="relative w-full h-full rounded-2xl ring-1 ring-blue-400/30 shadow-2xl shadow-blue-500/20 overflow-visible flex items-end justify-center bg-white/5 backdrop-blur-sm">
+                              <img
+                                src={dom.head.image}
+                                alt={dom.head.name}
+                                className="w-full h-full object-cover object-bottom rounded-2xl transition-all duration-700 ease-in-out relative z-[100] group-hover:scale-110 group-hover:rotate-1 group-hover:drop-shadow-2xl"
+                              />
+                            </div>
                           </div>
+                          <div className="text-lg font-bold mt-4">
+                            {dom.head.name}
+                          </div>
+                          <div className="text-sm font-medium text-primary uppercase tracking-wider">Head</div>
                         </div>
-                        <div className="text-base font-semibold">
-                          {dom.head.name}
-                        </div>
-                        <div className="text-sm text-muted-foreground">Head</div>
                       </div>
                     )}
+
+                    {/* Multiple Heads */}
                     {dom.heads && (
-                      <div className="flex justify-center gap-8 flex-wrap">
+                      <div className="flex justify-center gap-12 flex-wrap">
                         {dom.heads.map((head, headIdx) => (
-                          <div key={headIdx} className="group text-center overflow-visible z-10">
-                            <div className="relative mx-auto mb-3 w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-visible">
-                              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-cyan-400/40 to-indigo-500/40 rounded-2xl blur-md"></div>
-                              <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/25 via-blue-300/25 to-cyan-500/25 rounded-2xl"></div>
-                              <div className="relative w-full h-full rounded-2xl ring-2 ring-blue-400/40 shadow-2xl shadow-blue-500/30 overflow-visible flex items-end justify-center">
+                          <div key={headIdx} className="group text-center overflow-visible z-10 w-64">
+                            <div className="relative mx-auto mb-4 w-48 h-48 rounded-2xl overflow-visible hover:-translate-y-2 transition-transform duration-700 ease-in-out">
+                              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-cyan-400/30 to-indigo-500/30 rounded-2xl blur-md group-hover:blur-xl transition-all duration-700"></div>
+                              <div className="relative w-full h-full rounded-2xl ring-1 ring-blue-400/30 shadow-2xl shadow-blue-500/20 overflow-visible flex items-end justify-center bg-white/5 backdrop-blur-sm">
                                 <img
                                   src={head.image}
                                   alt={head.name}
-                                  className="w-full h-full object-cover object-bottom rounded-2xl transition-all duration-500 ease-out relative z-[100] group-hover:scale-[1.15] group-hover:drop-shadow-2xl"
+                                  className="w-full h-full object-cover object-bottom rounded-2xl transition-all duration-700 ease-in-out relative z-[100] group-hover:scale-110 group-hover:rotate-1 group-hover:drop-shadow-2xl"
                                 />
                               </div>
                             </div>
-                            <div className="text-base font-semibold">
+                            <div className="text-lg font-bold mt-4">
                               {head.name}
                             </div>
-                            <div className="text-sm text-muted-foreground">Head</div>
+                            <div className="text-sm font-medium text-primary uppercase tracking-wider">Head</div>
                           </div>
                         ))}
                       </div>
                     )}
-                    <div className="flex justify-center flex-wrap gap-10 px-6">
+
+                    {/* Associates */}
+                    <div className="flex justify-center flex-wrap gap-x-12 gap-y-10 px-4">
                       {dom.associates.map((a, idx) => (
-                        <div key={idx} className="group text-center overflow-visible z-10 w-32 md:w-36">
-                          <div className="relative mx-auto mb-3 w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-visible">
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/35 via-cyan-400/35 to-indigo-500/35 rounded-2xl blur-sm"></div>
-                            <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/20 via-blue-300/20 to-cyan-500/20 rounded-2xl"></div>
-                            <div className="relative w-full h-full rounded-2xl ring-2 ring-blue-400/40 shadow-xl shadow-blue-500/25 overflow-visible flex items-end justify-center">
+                        <div key={idx} className="group text-center overflow-visible z-10 w-44">
+                          <div className="relative mx-auto mb-3 w-40 h-40 rounded-2xl overflow-visible hover:-translate-y-1 transition-transform duration-700 ease-in-out">
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-400/20 to-indigo-500/20 rounded-2xl blur-sm group-hover:blur-lg transition-all duration-700"></div>
+                            <div className="relative w-full h-full rounded-2xl ring-1 ring-blue-400/20 shadow-xl shadow-blue-500/10 overflow-visible flex items-end justify-center bg-white/5 backdrop-blur-sm">
                               <img
                                 src={a.image}
                                 alt={a.name}
-                                className="w-full h-full object-cover object-bottom rounded-2xl transition-all duration-500 ease-out relative z-[100] group-hover:scale-[1.15] group-hover:drop-shadow-xl"
+                                className="w-full h-full object-cover object-bottom rounded-2xl transition-all duration-700 ease-in-out relative z-[100] group-hover:scale-105 group-hover:-rotate-1 group-hover:drop-shadow-xl"
                               />
                             </div>
                           </div>
-                          <div className="text-sm font-medium">{a.name}</div>
-                          <div className="text-xs text-muted-foreground">
+                          <div className="text-base font-semibold mt-2">{a.name}</div>
+                          <div className="text-xs text-muted-foreground uppercase tracking-wide">
                             Associate
                           </div>
                         </div>
@@ -411,7 +415,7 @@ const Team = () => {
         </div>
       </section>
 
-     {/* <section className="py-16 px-4">
+      {/* <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center glass-card p-8 rounded-2xl">
             <h2 className="text-3xl font-bold mb-4">

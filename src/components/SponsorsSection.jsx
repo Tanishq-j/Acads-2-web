@@ -1,4 +1,4 @@
-import acadssLogo from '@/assets/ACADSS.png';
+import acadssLogo from '../new-logo/ACADS_Blue_circle.png';
 import kitlogo from '@/assets/kitlogo.png';
 
 const SponsorsSection = () => {

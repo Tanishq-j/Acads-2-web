@@ -42,14 +42,20 @@ const HeroSection = () => {
       <div className="relative z-10 w-full max-w-7xl px-4 flex flex-col items-center gap-8 md:gap-12">
 
         {/* 1. Tagline: Integrity And Excellence (Slide in from Left) */}
-        <div className={`hidden lg:block absolute top-[30%] -translate-y-1/2 text-left pointer-events-none select-none transition-all duration-[3000ms] ease-out ${animationsReady ? 'left-10 opacity-100' : '-left-20 opacity-0'}`}>
+        <div
+          className={`hidden lg:block absolute top-[30%] -translate-y-1/2 text-left pointer-events-none select-none transition-all ${animationsReady ? 'left-10 opacity-100' : '-left-20 opacity-0'}`}
+          style={{ transitionDuration: '6000ms', transitionTimingFunction: 'cubic-bezier(0.25, 1, 0.5, 1)' }}
+        >
           <h2 className="text-7xl font-bold text-slate-700/80">Integrity</h2>
           <h2 className="text-5xl font-bold text-primary/80 ml-1 my-1">AND</h2>
           <h2 className="text-7xl font-bold text-slate-700/80">Excellence</h2>
         </div>
 
         {/* 2. Central Logo Motif (Pushed right with transform) */}
-        <div className={`relative w-[50vmin] max-w-[400px] aspect-square flex items-center justify-center mt-12 lg:translate-x-80 transition-all duration-[3000ms] ease-out ${animationsReady ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+        <div
+          className={`relative w-[50vmin] max-w-[400px] aspect-square flex items-center justify-center mt-12 lg:translate-x-80 transition-all ${animationsReady ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}
+          style={{ transitionDuration: '6000ms', transitionTimingFunction: 'cubic-bezier(0.25, 1, 0.5, 1)' }}
+        >
           {/* Concentric Circles */}
           <div className="absolute inset-0 rounded-full border border-slate-200 bg-slate-50/50" />
           <div className="absolute inset-8 rounded-full border border-slate-200" />
@@ -66,7 +72,10 @@ const HeroSection = () => {
         </div>
 
         {/* 3. Text Content (Centered - No Padding) */}
-        <div className={`flex flex-col items-center gap-6 max-w-3xl transition-all duration-[2000ms] delay-300 ease-out ${animationsReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`flex flex-col items-center gap-6 max-w-3xl transition-all delay-300 ${animationsReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          style={{ transitionDuration: '6000ms', transitionTimingFunction: 'cubic-bezier(0.25, 1, 0.5, 1)' }}
+        >
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
             Association of CSE <br className="hidden md:block" />
             <span className="gradient-text">(AIML & DS)</span> Students
