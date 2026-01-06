@@ -42,7 +42,10 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					magenta: 'hsl(var(--accent-magenta))',
+					green: 'hsl(var(--accent-green))',
+					yellow: 'hsl(var(--accent-yellow))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -86,57 +89,57 @@ export default {
 					}
 				},
 				'wordInLeft': {
-					'0%': { 
-						opacity: '0', 
-						transform: 'translate3d(-34vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)' 
+					'0%': {
+						opacity: '0',
+						transform: 'translate3d(-34vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
 					},
-					'100%': { 
-						opacity: '1', 
-						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)' 
+					'100%': {
+						opacity: '1',
+						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
 					}
 				},
 				'wordInRight': {
-					'0%': { 
-						opacity: '0', 
-						transform: 'translate3d(22vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)' 
+					'0%': {
+						opacity: '0',
+						transform: 'translate3d(22vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
 					},
-					'100%': { 
-						opacity: '1', 
-						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)' 
+					'100%': {
+						opacity: '1',
+						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
 					}
 				},
 				'estimateIn': {
-					'0%': { 
-						opacity: '0', 
-						transform: 'translate3d(22vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)' 
+					'0%': {
+						opacity: '0',
+						transform: 'translate3d(22vw, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
 					},
-					'100%': { 
-						opacity: '1', 
-						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)' 
+					'100%': {
+						opacity: '1',
+						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
 					}
 				},
 				'cardSlideUp': {
-					'0%': { 
-						opacity: '0', 
-						transform: 'translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)' 
+					'0%': {
+						opacity: '0',
+						transform: 'translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
 					},
-					'100%': { 
-						opacity: '1', 
-						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)' 
+					'100%': {
+						opacity: '1',
+						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
 					}
 				},
 				'logoReveal': {
-					'0%': { 
-						opacity: '0', 
-						transform: 'scale3d(0.8, 0.8, 1)', 
-						width: '0em', 
-						height: '0em' 
+					'0%': {
+						opacity: '0',
+						transform: 'scale3d(0.8, 0.8, 1)',
+						width: '0em',
+						height: '0em'
 					},
-					'100%': { 
-						opacity: '0.4', 
-						transform: 'scale3d(1, 1, 1)', 
-						width: '16.88em', 
-						height: '16.88em' 
+					'100%': {
+						opacity: '0.4',
+						transform: 'scale3d(1, 1, 1)',
+						width: '16.88em',
+						height: '16.88em'
 					}
 				}
 			},

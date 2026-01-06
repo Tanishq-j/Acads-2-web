@@ -1,6 +1,6 @@
 import { Mail, Linkedin, Instagram, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ACADSSLogo from '@/assets/ACADSS.png';
+import ACADSSLogo from '@/assets/ACADSS_circle.png';
 import KitCoEKLogo from '@/assets/kitlogo.png';
 
 const Footer = () => {
