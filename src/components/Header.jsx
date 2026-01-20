@@ -83,7 +83,7 @@ const Header = () => {
   return (
     <header className={`${headerPlacementClass} z-50 transition-all duration-500 ease-in-out ${headerStyleClass}`}>
       <div className={`${isScrolled ? 'mx-auto w-[92%] sm:w-[86%] md:w-[80%] lg:w-[70%]' : 'container mx-auto'} px-4 transition-all duration-500 ease-in-out`}>
-        <div className={`border rounded-2xl transition-colors duration-700 ease-in-out ${isScrolled ? 'glass-card border-white/20 backdrop-blur-[5px] bg-black/40 shadow-2xl' : 'border-transparent'}`}>
+        <div className={`border rounded-2xl transition-colors duration-700 ease-in-out ${isScrolled ? 'glass-card border-slate-200/60 backdrop-blur-[6px] bg-white/90 shadow-2xl' : 'border-transparent'}`}>
           <div className={`flex items-center justify-between ${isScrolled ? 'h-16 px-4' : 'h-20'} transition-[height,padding] duration-500 ease-in-out`}>
 
             <Link to="/" className="flex items-center space-x-2">
