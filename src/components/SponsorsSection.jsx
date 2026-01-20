@@ -27,9 +27,9 @@ const SponsorsSection = () => {
         <div className="absolute top-0 right-0 h-full w-12 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
         <div className="glass-card py-12 rounded-3xl border border-white/40 shadow-xl backdrop-blur-md bg-white/60">
-          <div className="flex gap-12 md:gap-24 animate-marquee whitespace-nowrap min-w-full">
+          <div className="flex animate-marquee whitespace-nowrap min-w-full">
             {[...sponsors, ...sponsors, ...sponsors].map((item, index) => (
-              <div key={`${item.id}-${index}`} className="flex-shrink-0 flex items-center justify-center h-20 w-40 md:w-48 grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 cursor-pointer">
+              <div key={`${item.id}-${index}`} className="flex-shrink-0 flex items-center justify-center h-20 w-40 md:w-48 mr-12 md:mr-24 transition-all duration-500 hover:scale-110 cursor-pointer">
                 <img
                   src={item.logo}
                   alt={item.name}
@@ -45,11 +45,13 @@ const SponsorsSection = () => {
       <style>{`
             @keyframes marquee {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(-33.33%); } /* Move 1/3 since we tripled the list */
+                100% { transform: translateX(calc(-100% / 3)); }
             }
             .animate-marquee {
                 display: flex;
-                animation: marquee 30s linear infinite;
+                width: max-content; /* Ensure exact width based on content */
+                will-change: transform; /* Hint for GPU acceleration */
+                animation: marquee 20s linear infinite; /* Adjusted speed for smoothness */
             }
             .animate-marquee:hover {
                 animation-play-state: paused;
