@@ -21,49 +21,49 @@ const BeyondResume = () => {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <div ref={containerRef} className="bg-slate-950 text-slate-50 overflow-x-hidden font-sans selection:bg-cyan-500/30">
+    <div ref={containerRef} className="bg-slate-50 text-slate-900 overflow-x-hidden font-sans selection:bg-cyan-500/30">
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-screen flex flex-col pt-20 bg-slate-950 overflow-hidden font-sans selection:bg-cyan-500/30">
+      <section className="relative min-h-screen flex flex-col pt-20 bg-slate-50 overflow-hidden font-sans selection:bg-cyan-500/30">
 
         {/* Hero Content Grid */}
         <div className="flex-1 max-w-7xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 py-12 lg:py-0">
 
           {/* Left Column */}
           <div className="space-y-8 animate-fade-in-left">
-            <div className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-mono tracking-wider text-slate-300">
+            <div className="inline-block px-4 py-1.5 rounded-full border border-slate-200 bg-white/50 text-xs font-mono tracking-wider text-slate-600">
               Departmental Club • Main Event
             </div>
 
             <div className="space-y-4">
               <p className="text-xs font-bold tracking-[0.2em] text-slate-500 uppercase">Selection Experience</p>
-              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[0.9]">
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tighter text-slate-900 leading-[0.9]">
                 BEYOND<br />RESUME
               </h1>
-              <p className="text-xl text-slate-400 font-light max-w-md">Go beyond your CV. Show what you can do.</p>
+              <p className="text-xl text-slate-600 font-light max-w-md">Go beyond your CV. Show what you can do.</p>
             </div>
 
             <div className="flex flex-wrap gap-4">
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] flex items-center gap-2">
                 Apply <ArrowRight className="w-4 h-4" />
               </button>
-              <button className="px-8 py-3.5 rounded-full border border-white/10 text-white hover:bg-white/5 transition-all font-semibold flex items-center gap-2">
+              <button className="px-8 py-3.5 rounded-full border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all font-semibold flex items-center gap-2">
                 <Users className="w-4 h-4" /> Share
               </button>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8">
-              <div className="p-4 rounded-xl border border-white/10 bg-white/5">
+              <div className="p-4 rounded-xl border border-slate-200 bg-white/50">
                 <div className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Rounds</div>
-                <div className="text-3xl font-bold text-white">03</div>
+                <div className="text-3xl font-bold text-slate-900">03</div>
               </div>
-              <div className="p-4 rounded-xl border border-white/10 bg-white/5 col-span-2 sm:col-span-1">
+              <div className="p-4 rounded-xl border border-slate-200 bg-white/50 col-span-2 sm:col-span-1">
                 <div className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Format</div>
-                <div className="text-sm font-medium text-white">Aptitude → GD → Interview</div>
+                <div className="text-sm font-medium text-slate-900">Aptitude → GD → Interview</div>
               </div>
-              <div className="p-4 rounded-xl border border-white/10 bg-white/5 col-span-2 sm:col-span-1">
+              <div className="p-4 rounded-xl border border-slate-200 bg-white/50 col-span-2 sm:col-span-1">
                 <div className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">Goal</div>
-                <div className="text-sm font-medium text-white">Show what you can do</div>
+                <div className="text-sm font-medium text-slate-900">Show what you can do</div>
               </div>
             </div>
           </div>
@@ -86,14 +86,14 @@ const BeyondResume = () => {
               </div>
 
               {/* Bottom Card - Roadmap Cue */}
-              <div className="absolute bottom-6 left-6 right-6 bg-slate-900/90 backdrop-blur-md rounded-2xl p-5 border border-white/10 shadow-lg">
+              <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 border border-slate-200 shadow-lg">
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-1">Roadmap</div>
-                    <div className="text-sm font-semibold text-white">Scroll to reveal rounds one by one</div>
+                    <div className="text-sm font-semibold text-slate-900">Scroll to reveal rounds one by one</div>
                   </div>
-                  <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center animate-bounce">
-                    <ChevronDown className="w-4 h-4 text-white" />
+                  <div className="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center animate-bounce">
+                    <ChevronDown className="w-4 h-4 text-slate-900" />
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@ const BeyondResume = () => {
         </div>
 
         {/* Bottom Marquee */}
-        <div className="relative w-full py-4 border-t border-white/5 bg-slate-900/50 overflow-hidden">
+        <div className="relative w-full py-4 border-t border-slate-200 bg-slate-100/50 overflow-hidden">
           <div className="flex whitespace-nowrap animate-marquee-slow">
             {[...Array(10)].map((_, i) => (
               <div key={i} className="flex items-center gap-8 mx-4">
@@ -140,27 +140,27 @@ const BeyondResume = () => {
       </section>
 
       {/* --- ABOUT SECTION (Redesigned) --- */}
-      <section className="py-24 px-6 relative z-10 bg-slate-950">
+      <section className="py-24 px-6 relative z-10 bg-slate-50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Column: Typography & Stats */}
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.1]">
-              ACADS' <span className="text-blue-500">Premier</span><br />
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+              ACADS' <span className="text-blue-600">Premier</span><br />
               Selection Experience.
             </h2>
 
-            <p className="text-slate-400 text-lg leading-relaxed max-w-lg font-normal">
-              <strong className="text-white font-medium">Beyond Resume</strong> is a carefully crafted simulation shaped by years of community, creativity, and innovation to find the best talent.
+            <p className="text-slate-600 text-lg leading-relaxed max-w-lg font-normal">
+              <strong className="text-slate-900 font-medium">Beyond Resume</strong> is a carefully crafted simulation shaped by years of community, creativity, and innovation to find the best talent.
             </p>
 
-            <div className="flex items-center gap-16 pt-8 border-t border-white/5">
+            <div className="flex items-center gap-16 pt-8 border-t border-slate-200">
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-white">6+</div>
+                <div className="text-4xl md:text-5xl font-bold text-slate-900">6+</div>
                 <div className="text-xs font-semibold tracking-wider text-slate-500 uppercase mt-2">Years of Legacy</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-bold text-white">100+</div>
+                <div className="text-4xl md:text-5xl font-bold text-slate-900">100+</div>
                 <div className="text-xs font-semibold tracking-wider text-slate-500 uppercase mt-2">Participants</div>
               </div>
             </div>
@@ -168,36 +168,36 @@ const BeyondResume = () => {
 
           {/* Right Column: Track Cards */}
           <div className="space-y-6">
-            {/* Main Process Card (Dark) */}
-            <div className="bg-slate-900/50 backdrop-blur-sm rounded-[2rem] p-8 relative overflow-hidden group hover:border-blue-500/30 transition-all duration-500 border border-white/10 md:p-10">
+            {/* Main Process Card (Light) */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-8 relative overflow-hidden group hover:border-blue-500/30 transition-all duration-500 border border-slate-200 md:p-10 shadow-sm">
               <div className="relative z-10">
-                <span className="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold tracking-widest uppercase rounded-full mb-6 border border-blue-500/20">
+                <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold tracking-widest uppercase rounded-full mb-6 border border-blue-100">
                   Main Process
                 </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Selection Process</h3>
-                <p className="text-slate-400 text-sm md:text-base max-w-sm mb-8 leading-relaxed">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Selection Process</h3>
+                <p className="text-slate-600 text-sm md:text-base max-w-sm mb-8 leading-relaxed">
                   The open arena for all ideas. If you can dream it, you can do it here.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-4 py-2 bg-slate-800 text-slate-200 text-xs font-medium rounded-full border border-white/5">Aptitude Test</span>
-                  <span className="px-4 py-2 bg-slate-800 text-slate-200 text-xs font-medium rounded-full border border-white/5">Group Discussion</span>
+                  <span className="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-medium rounded-full border border-slate-200">Aptitude Test</span>
+                  <span className="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-medium rounded-full border border-slate-200">Group Discussion</span>
                 </div>
               </div>
             </div>
 
-            {/* Exclusive Stage Card (Dark) */}
-            <div className="bg-slate-900/50 backdrop-blur-sm rounded-[2rem] p-8 relative overflow-hidden group hover:border-lime-500/30 transition-all duration-500 border border-white/10 md:p-10">
+            {/* Exclusive Stage Card (Light) */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-8 relative overflow-hidden group hover:border-lime-500/30 transition-all duration-500 border border-slate-200 md:p-10 shadow-sm">
               <div className="relative z-10">
-                <span className="inline-block px-3 py-1 bg-lime-500/10 text-lime-400 text-[10px] font-bold tracking-widest uppercase rounded-full mb-6 border border-lime-500/20">
+                <span className="inline-block px-3 py-1 bg-lime-50 text-lime-600 text-[10px] font-bold tracking-widest uppercase rounded-full mb-6 border border-lime-100">
                   Exclusive Stage
                 </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Final Frontier</h3>
-                <p className="text-slate-400 text-sm md:text-base max-w-sm mb-8 leading-relaxed">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Final Frontier</h3>
+                <p className="text-slate-600 text-sm md:text-base max-w-sm mb-8 leading-relaxed">
                   Exclusive for shortlisted candidates. Prove your mettle in the final interview.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-4 py-2 bg-slate-800 text-slate-200 text-xs font-medium rounded-full border border-white/5">Personal Interview</span>
-                  <span className="px-4 py-2 bg-slate-800 text-slate-200 text-xs font-medium rounded-full border border-white/5">HR Round</span>
+                  <span className="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-medium rounded-full border border-slate-200">Personal Interview</span>
+                  <span className="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-medium rounded-full border border-slate-200">HR Round</span>
                 </div>
               </div>
             </div>
@@ -207,12 +207,12 @@ const BeyondResume = () => {
       </section>
 
       {/* --- TREE ROADMAP SECTION --- */}
-      <section className="py-32 bg-slate-950 relative overflow-hidden">
+      <section className="py-32 bg-slate-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">The Process</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">A three-stage filter designed to test every facet of your professional persona.</p>
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">The Process</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">A three-stage filter designed to test every facet of your professional persona.</p>
             </div>
           </ScrollReveal>
 
@@ -221,12 +221,12 @@ const BeyondResume = () => {
       </section>
 
       {/* --- PIXELMATOR GALLERY (13-IMAGE REPLICA) --- */}
-      <section className="py-32 px-6 overflow-hidden relative min-h-screen bg-slate-950">
+      <section className="py-32 px-6 overflow-hidden relative min-h-screen bg-slate-50">
         <div className="max-w-[1400px] mx-auto h-full flex flex-col items-center">
           <ScrollReveal>
             <div className="text-center mb-10 relative z-20">
-              <h2 className="text-4xl md:text-6xl font-bold mb-4">Glimpses of Legacy</h2>
-              <p className="text-slate-400 text-lg">Past editions that set the benchmark.</p>
+              <h2 className="text-4xl md:text-6xl font-bold mb-4 text-slate-900">Glimpses of Legacy</h2>
+              <p className="text-slate-600 text-lg">Past editions that set the benchmark.</p>
             </div>
           </ScrollReveal>
 
@@ -240,9 +240,9 @@ const BeyondResume = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               style={{ zIndex: 40 }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[580px] rounded-xl shadow-2xl overflow-hidden border border-white/20 bg-slate-800"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[580px] rounded-xl shadow-2xl overflow-hidden border border-slate-200 bg-white"
             >
-              <div className="bg-slate-900 px-4 py-2 flex items-center gap-2 border-b border-white/5">
+              <div className="bg-slate-100 px-4 py-2 flex items-center gap-2 border-b border-slate-200">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
@@ -280,11 +280,11 @@ const BeyondResume = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               style={{ zIndex: 40 }}
-              className="absolute bottom-[8%] right-[15%] w-[400px] md:w-[500px] rounded-xl shadow-2xl overflow-hidden border border-white/20 bg-slate-800 rotate-[-2deg]"
+              className="absolute bottom-[8%] right-[15%] w-[400px] md:w-[500px] rounded-xl shadow-2xl overflow-hidden border border-slate-200 bg-white rotate-[-2deg]"
             >
-              <div className="bg-slate-900 px-4 py-2 flex items-center gap-2 border-b border-white/5">
-                <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-                <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+              <div className="bg-slate-100 px-4 py-2 flex items-center gap-2 border-b border-slate-200">
+                <div className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                <div className="w-2.5 h-2.5 rounded-full bg-slate-300" />
               </div>
               <img src={img4} alt="Main" className="w-full h-auto object-cover opacity-95" />
             </motion.div>
@@ -323,7 +323,7 @@ const BeyondResume = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 key={i}
-                className="rounded-xl overflow-hidden shadow-lg border border-white/10"
+                className="rounded-xl overflow-hidden shadow-lg border border-slate-200"
               >
                 <img src={src} alt="Gallery" className="w-full h-auto object-cover" />
               </motion.div>
@@ -333,62 +333,62 @@ const BeyondResume = () => {
       </section>
 
       {/* --- CONTACT SECTION --- */}
-      <section className="py-24 px-6 bg-slate-950 relative z-10 border-t border-white/5">
+      <section className="py-24 px-6 bg-slate-50 relative z-10 border-t border-slate-200">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {/* Help & Support Card */}
-          <div className="bg-slate-900 rounded-[2rem] p-8 md:p-10 border border-white/10 flex flex-col justify-between h-full hover:border-white/20 transition-colors">
+          <div className="bg-white/80 rounded-[2rem] p-8 md:p-10 border border-slate-200 flex flex-col justify-between h-full hover:border-slate-300 transition-colors shadow-sm">
             <div>
               <div className="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-6">Help & Support</div>
-              <h3 className="text-3xl font-bold text-white mb-4">Got questions? We're here.</h3>
-              <p className="text-slate-400 text-sm mb-8 leading-relaxed">
+              <h3 className="text-3xl font-bold text-slate-900 mb-4">Got questions? We're here.</h3>
+              <p className="text-slate-600 text-sm mb-8 leading-relaxed">
                 Whether it's about registration, the roadmap, or just saying hello — we're here.
               </p>
               <div className="flex gap-3 mb-10">
                 <button className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-full transition-colors">General enquiries</button>
-                <button className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold rounded-full transition-colors border border-white/5">Code of conduct</button>
+                <button className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-full transition-colors border border-slate-200">Code of conduct</button>
               </div>
             </div>
             <div>
               <div className="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-2">Contact</div>
-              <a href="mailto:contact@acadskitcoek.in" className="text-white font-bold underline decoration-blue-500 underline-offset-4 hover:text-blue-400 transition-colors">CONTACT@ACADSKITCOEK.IN</a>
+              <a href="mailto:contact@acadskitcoek.in" className="text-slate-900 font-bold underline decoration-blue-500 underline-offset-4 hover:text-blue-600 transition-colors">CONTACT@ACADSKITCOEK.IN</a>
 
               <div className="mt-8">
                 <div className="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-1">Organized By</div>
-                <div className="text-white font-bold">Departmental Club</div>
+                <div className="text-slate-900 font-bold">Departmental Club</div>
                 <div className="text-slate-500 text-xs">KITCoEK • Kolhapur</div>
               </div>
             </div>
           </div>
 
           {/* Coordinators Card */}
-          <div className="bg-slate-900 rounded-[2rem] p-8 md:p-10 border border-white/10 flex flex-col h-full lg:col-span-2 hover:border-white/20 transition-colors">
+          <div className="bg-white/80 rounded-[2rem] p-8 md:p-10 border border-slate-200 flex flex-col h-full lg:col-span-2 hover:border-slate-300 transition-colors shadow-sm">
             <div className="text-[10px] font-bold tracking-widest text-slate-500 uppercase mb-8">Coordinators</div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 h-full">
               <div className="space-y-8">
                 <div>
-                  <div className="text-xs font-semibold text-slate-400 mb-1">Faculty Coordinator</div>
-                  <div className="text-xl font-bold text-white mb-2">Prof. M. S. Salunkhe</div>
-                  <div className="text-slate-400 font-mono text-sm">+91 90000 00000</div>
+                  <div className="text-xs font-semibold text-slate-500 mb-1">Faculty Coordinator</div>
+                  <div className="text-xl font-bold text-slate-900 mb-2">Prof. M. S. Salunkhe</div>
+                  <div className="text-slate-600 font-mono text-sm">+91 90000 00000</div>
                 </div>
                 <div>
-                  <div className="text-xs font-semibold text-slate-400 mb-1">Faculty Coordinator</div>
-                  <div className="text-xl font-bold text-white mb-2">Prof. R. B. Patil</div>
-                  <div className="text-slate-400 font-mono text-sm">+91 90000 00000</div>
+                  <div className="text-xs font-semibold text-slate-500 mb-1">Faculty Coordinator</div>
+                  <div className="text-xl font-bold text-slate-900 mb-2">Prof. R. B. Patil</div>
+                  <div className="text-slate-600 font-mono text-sm">+91 90000 00000</div>
                 </div>
               </div>
 
               <div className="space-y-8">
                 <div>
-                  <div className="text-xs font-semibold text-slate-400 mb-1">Student Coordinator</div>
-                  <div className="text-xl font-bold text-white mb-2">Tanishq Jaiswal</div>
-                  <div className="text-slate-400 font-mono text-sm">+91 79947 44144</div>
+                  <div className="text-xs font-semibold text-slate-500 mb-1">Student Coordinator</div>
+                  <div className="text-xl font-bold text-slate-900 mb-2">Tanishq Jaiswal</div>
+                  <div className="text-slate-600 font-mono text-sm">+91 79947 44144</div>
                 </div>
                 <div>
-                  <div className="text-xs font-semibold text-slate-400 mb-1">Student Coordinator</div>
-                  <div className="text-xl font-bold text-white mb-2">Aditya Patange</div>
-                  <div className="text-slate-400 font-mono text-sm">+91 89437 13703</div>
+                  <div className="text-xs font-semibold text-slate-500 mb-1">Student Coordinator</div>
+                  <div className="text-xl font-bold text-slate-900 mb-2">Aditya Patange</div>
+                  <div className="text-slate-600 font-mono text-sm">+91 89437 13703</div>
                 </div>
               </div>
             </div>
@@ -413,7 +413,7 @@ const TreeRoadmap = () => {
   return (
     <div ref={ref} className="relative max-w-3xl mx-auto">
       {/* The Vertical Line */}
-      <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[2px] bg-slate-800 -translate-x-1/2">
+      <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[2px] bg-slate-200 -translate-x-1/2">
         <motion.div
           style={{ scaleY: scrollYProgress, transformOrigin: "top" }}
           className="w-full h-full bg-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.5)]"
@@ -460,15 +460,15 @@ const TreeNode = ({ index, title, subtitle, desc, align }) => {
       className={`relative flex items-center md:items-start flex-col ${isRight ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 pl-12 md:pl-0`}
     >
       {/* Node Dot */}
-      <div className="absolute left-[20px] md:left-1/2 top-0 md:top-6 w-4 h-4 rounded-full bg-slate-900 border-2 border-cyan-500 z-10 -translate-x-1/2 shadow-[0_0_15px_rgba(6,182,212,0.5)]">
+      <div className="absolute left-[20px] md:left-1/2 top-0 md:top-6 w-4 h-4 rounded-full bg-white border-2 border-cyan-500 z-10 -translate-x-1/2 shadow-[0_0_15px_rgba(6,182,212,0.5)]">
         <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-20" />
       </div>
 
       {/* Content Card */}
       <div className={`flex-1 ${isRight ? 'text-left' : 'md:text-right text-left'}`}>
-        <div className="inline-block text-cyan-500 font-mono text-sm font-bold tracking-widest mb-2">STAGE 0{index}</div>
-        <h3 className="text-3xl font-bold text-white mb-1">{title}</h3>
-        <p className="text-slate-400 font-medium mb-4">{subtitle}</p>
+        <div className="inline-block text-cyan-600 font-mono text-sm font-bold tracking-widest mb-2">STAGE 0{index}</div>
+        <h3 className="text-3xl font-bold text-slate-900 mb-1">{title}</h3>
+        <p className="text-slate-600 font-medium mb-4">{subtitle}</p>
         <p className="text-slate-500 leading-relaxed text-sm md:text-base">{desc}</p>
       </div>
 
@@ -500,13 +500,13 @@ const StatCard = ({ icon: Icon, value, label, delay }) => (
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}
     transition={{ delay, duration: 0.5 }}
-    className="p-8 rounded-3xl bg-white/5 border border-white/10 text-center hover:bg-white/10 hover:-translate-y-2 transition-all duration-300"
+    className="p-8 rounded-3xl bg-white/50 border border-slate-200 text-center hover:bg-white/80 hover:-translate-y-2 transition-all duration-300"
   >
-    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center mx-auto mb-6">
-      <Icon className="w-8 h-8 text-cyan-400" />
+    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 flex items-center justify-center mx-auto mb-6">
+      <Icon className="w-8 h-8 text-cyan-600" />
     </div>
-    <h3 className="text-3xl font-bold text-white mb-2">{value}</h3>
-    <p className="text-slate-400">{label}</p>
+    <h3 className="text-3xl font-bold text-slate-900 mb-2">{value}</h3>
+    <p className="text-slate-600">{label}</p>
   </motion.div>
 );
 
@@ -518,7 +518,7 @@ const GalleryItem = ({ src, rotate, top, left, right, bottom, z, delay, aspectRa
     viewport={{ once: true }}
     transition={{ delay, duration: 0.8, ease: "backOut" }}
     whileHover={{ scale: 1.05, zIndex: 50, rotate: "0deg", transition: { duration: 0.3 }, opacity: 1 }}
-    className={`absolute ${width} rounded-xl overflow-hidden shadow-2xl border-4 border-white/5 cursor-pointer bg-slate-800 transition-opacity`}
+    className={`absolute ${width} rounded-xl overflow-hidden shadow-2xl border-4 border-slate-200 cursor-pointer bg-white transition-opacity`}
   >
     <div style={{ aspectRatio }} className="w-full relative">
       <img src={src} alt="Gallery" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
@@ -528,7 +528,7 @@ const GalleryItem = ({ src, rotate, top, left, right, bottom, z, delay, aspectRa
 );
 
 const SocialLink = ({ href, icon: Icon }) => (
-  <a href={href} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500 hover:text-white transition-all duration-300">
+  <a href={href} className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-cyan-500 hover:text-white transition-all duration-300">
     <Icon className="w-5 h-5" />
   </a>
 );
