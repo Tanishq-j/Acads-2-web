@@ -108,9 +108,7 @@ const Header = () => {
                       onMouseEnter={openAbout}
                       onMouseLeave={scheduleCloseAbout}
                     >
-                      <button className={`group relative flex items-center space-x-1 transition-colors duration-300 ease-in-out ${location.pathname === '/beyond-resume' && !isScrolled
-                          ? 'text-slate-200 hover:text-white'
-                          : 'text-foreground hover:text-primary'
+                      <button className={`group relative flex items-center space-x-1 transition-colors duration-300 ease-in-out ${'text-foreground hover:text-primary'
                         }`}>
                         <span>{item.title}</span>
                         <ChevronDown className="w-4 h-4" />
@@ -140,9 +138,7 @@ const Header = () => {
                       to={item.path}
                       className={`group relative transition-colors duration-300 ease-in-out ${isActive(item.path)
                         ? 'text-primary'
-                        : location.pathname === '/beyond-resume' && !isScrolled
-                          ? 'text-slate-200 hover:text-white'
-                          : 'text-foreground hover:text-primary'
+                        : 'text-foreground hover:text-primary'
                         }`}
                     >
                       {item.title}
@@ -164,51 +160,53 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-slate-200 transition-all duration-500 ease-in-out glass-card mt-2">
-            <nav className="space-y-2">
-              {navItems.map((item) => (
-                <div key={item.title}>
-                  {item.hasDropdown ? (
-                    <>
-                      <button
-                        onClick={() => setIsAboutOpen(!isAboutOpen)}
-                        className="flex items-center justify-between w-full px-4 py-2 text-foreground hover:bg-slate-100 rounded-lg transition-colors duration-300 ease-in-out"
+        {
+          isMenuOpen && (
+            <div className="lg:hidden py-4 border-t border-slate-200 transition-all duration-500 ease-in-out glass-card mt-2">
+              <nav className="space-y-2">
+                {navItems.map((item) => (
+                  <div key={item.title}>
+                    {item.hasDropdown ? (
+                      <>
+                        <button
+                          onClick={() => setIsAboutOpen(!isAboutOpen)}
+                          className="flex items-center justify-between w-full px-4 py-2 text-foreground hover:bg-slate-100 rounded-lg transition-colors duration-300 ease-in-out"
+                        >
+                          <span>{item.title}</span>
+                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isAboutOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                        {isAboutOpen && (
+                          <div className="ml-4 space-y-1">
+                            {item.items?.map((subItem) => (
+                              <Link
+                                key={subItem.path}
+                                to={subItem.path}
+                                onClick={() => setIsMenuOpen(false)}
+                                className={`block px-4 py-2 text-sm rounded-lg transition-colors duration-300 ease-in-out ${isActive(subItem.path) ? 'text-primary bg-white/5' : 'text-foreground hover:bg-white/10'}`}
+                              >
+                                {subItem.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`block px-4 py-2 rounded-lg transition-colors duration-300 ease-in-out ${isActive(item.path) ? 'text-primary bg-white/5' : 'text-foreground hover:bg-white/10'}`}
                       >
-                        <span>{item.title}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isAboutOpen ? 'rotate-180' : ''}`} />
-                      </button>
-                      {isAboutOpen && (
-                        <div className="ml-4 space-y-1">
-                          {item.items?.map((subItem) => (
-                            <Link
-                              key={subItem.path}
-                              to={subItem.path}
-                              onClick={() => setIsMenuOpen(false)}
-                              className={`block px-4 py-2 text-sm rounded-lg transition-colors duration-300 ease-in-out ${isActive(subItem.path) ? 'text-primary bg-white/5' : 'text-foreground hover:bg-white/10'}`}
-                            >
-                              {subItem.title}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <Link
-                      to={item.path}
-                      onClick={() => setIsMenuOpen(false)}
-                      className={`block px-4 py-2 rounded-lg transition-colors duration-300 ease-in-out ${isActive(item.path) ? 'text-primary bg-white/5' : 'text-foreground hover:bg-white/10'}`}
-                    >
-                      {item.title}
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </nav>
-          </div>
-        )}
-      </div>
-    </header>
+                        {item.title}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </nav>
+            </div>
+          )
+        }
+      </div >
+    </header >
   );
 };
 

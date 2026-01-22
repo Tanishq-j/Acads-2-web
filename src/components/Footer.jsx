@@ -37,11 +37,9 @@ const Footer = () => {
   ];
 
   const location = useLocation();
-  const isBeyondResume = location.pathname === '/beyond-resume';
-
   return (
-    <footer className={`relative ${isBeyondResume ? 'bg-slate-950 text-slate-300' : ''}`}>
-      <div className={`glass-card rounded-none border-x-0 border-b-0 ${isBeyondResume ? '!bg-slate-950/50 border-white/10 hover:!bg-slate-950/50 transition-colors' : ''}`}>
+    <footer className="relative">
+      <div className="glass-card rounded-none border-x-0 border-b-0">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Left-aligned logo and info */}
