@@ -33,6 +33,7 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   const navItems = [
+    { title: 'Beyond Resume', path: '/beyond-resume' },
     {
       title: 'About',
       hasDropdown: true,
@@ -107,7 +108,10 @@ const Header = () => {
                       onMouseEnter={openAbout}
                       onMouseLeave={scheduleCloseAbout}
                     >
-                      <button className="group relative flex items-center space-x-1 text-foreground hover:text-primary transition-colors duration-300 ease-in-out">
+                      <button className={`group relative flex items-center space-x-1 transition-colors duration-300 ease-in-out ${location.pathname === '/beyond-resume' && !isScrolled
+                          ? 'text-slate-200 hover:text-white'
+                          : 'text-foreground hover:text-primary'
+                        }`}>
                         <span>{item.title}</span>
                         <ChevronDown className="w-4 h-4" />
                         <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-0 bg-primary/60 transition-all duration-300 ease-in-out group-hover:w-full" />
@@ -134,7 +138,12 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className={`group relative text-foreground hover:text-primary transition-colors duration-300 ease-in-out ${isActive(item.path) ? 'text-primary' : ''}`}
+                      className={`group relative transition-colors duration-300 ease-in-out ${isActive(item.path)
+                        ? 'text-primary'
+                        : location.pathname === '/beyond-resume' && !isScrolled
+                          ? 'text-slate-200 hover:text-white'
+                          : 'text-foreground hover:text-primary'
+                        }`}
                     >
                       {item.title}
                       <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-0 bg-primary/60 transition-all duration-300 ease-in-out group-hover:w-full" />
